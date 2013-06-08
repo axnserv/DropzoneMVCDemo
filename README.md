@@ -1,4 +1,4 @@
-DropzoneMVCDemo
+Dropzone ASP.NET MVC Demo
 ===============
 
-Dropzone js ASP.NET MVC Demo
+
