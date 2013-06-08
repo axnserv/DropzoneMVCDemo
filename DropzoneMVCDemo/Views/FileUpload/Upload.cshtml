@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ASP.NET MVC Drag and drop upload demo</title>
+    <link href="~/Content/Dropzone/dropzone.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("upload", "FileUpload", FormMethod.Post, new { enctype = "multipart/form-data", 
+                                                                              id = "uploadDemo",
+                                                                              @class = "dropzone" }))
+        {
+            <div class="fallback row-fluid">
+                <input name="file" type="file" multiple />
+                <input type="submit" value="Upload" />
+            </div>
+        }
+    </div>
+</body>
+</html>
+<script src="~/Content/Dropzone/dropzone.js"></script>
+<script type="text/javascript">
+    // "uploadDemo" is the camelized version of the HTML form's ID
+    Dropzone.options.uploadDemo = {
+        paramName: "file", // Must match the name of the HttpPostedFileBase argument that the Upload action expects.
+        maxFileSize: 100 //MB
+    };
+</script>
